@@ -1,1 +1,10 @@
+com/skillsync/skillsync/api/dto/MatchRequest.class
+com/skillsync/skillsync/ai/dto/AiAnalyzeRequest.class
+com/skillsync/skillsync/HealthController.class
+com/skillsync/skillsync/api/MatchService.class
+com/skillsync/skillsync/ai/dto/AiAnalyzeResponse.class
+com/skillsync/skillsync/ai/AiAnalyzeService.class
 com/skillsync/skillsync/SkillsyncApplication.class
+com/skillsync/skillsync/api/GlobalExceptionHandler.class
+com/skillsync/skillsync/api/dto/MatchResponse.class
+com/skillsync/skillsync/api/MatchController.class

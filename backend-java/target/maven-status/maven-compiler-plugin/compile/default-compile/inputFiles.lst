@@ -1,2 +1,10 @@
 /Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/HealthController.java
 /Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/SkillsyncApplication.java
+/Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/ai/AiAnalyzeService.java
+/Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/ai/dto/AiAnalyzeRequest.java
+/Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/ai/dto/AiAnalyzeResponse.java
+/Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/api/GlobalExceptionHandler.java
+/Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/api/MatchController.java
+/Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/api/MatchService.java
+/Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/api/dto/MatchRequest.java
+/Users/evansanderson/Documents/MyProjects/skillsync-senior-seminar/backend-java/src/main/java/com/skillsync/skillsync/api/dto/MatchResponse.java
