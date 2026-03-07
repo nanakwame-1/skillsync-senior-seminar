@@ -37,3 +37,4 @@ __pycache__/
 # VS Code
 # =====================
 .vscode/
+backend-java/target/
