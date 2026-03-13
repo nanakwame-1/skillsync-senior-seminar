@@ -7,10 +7,11 @@ import com.skillsync.skillsync.api.dto.MatchResponse;
 import com.skillsync.skillsync.model.MatchResult;
 import com.skillsync.skillsync.repository.MatchResultRepository;
 import org.springframework.stereotype.Service;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class MatchService {
-
     private final AiAnalyzeService aiAnalyzeService;
     private final MatchResultRepository matchResultRepository;
 
@@ -21,7 +22,6 @@ public class MatchService {
 
     public MatchResponse createMatch(MatchRequest req) {
         AiAnalyzeResponse ai = aiAnalyzeService.analyze(req.getResumeText(), req.getJobText());
-
         MatchResult entity = new MatchResult();
         entity.setUserEmail(req.getUserEmail());
         entity.setResumeText(req.getResumeText());
@@ -29,14 +29,24 @@ public class MatchService {
         entity.setScore(ai.getScore());
         entity.setMatchedSkills(String.join(",", ai.getMatchedSkills()));
         entity.setMissingSkills(String.join(",", ai.getMissingSkills()));
-
         MatchResult saved = matchResultRepository.save(entity);
-
         return new MatchResponse(
                 saved.getId().toString(),
                 saved.getScore(),
                 ai.getMatchedSkills(),
                 ai.getMissingSkills(),
                 saved.getCreatedAt());
+    }
+
+    public List<MatchResponse> getAllMatches() {
+        return matchResultRepository.findAll()
+                .stream()
+                .map(saved -> new MatchResponse(
+                        saved.getId().toString(),
+                        saved.getScore(),
+                        Arrays.asList(saved.getMatchedSkills().split(",")),
+                        Arrays.asList(saved.getMissingSkills().split(",")),
+                        saved.getCreatedAt()))
+                .toList();
     }
 }
