@@ -8,14 +8,16 @@ public class MatchResponse {
     private double score;
     private List<String> matchedSkills;
     private List<String> missingSkills;
+    private List<String> suggestions;
     private Instant createdAt;
 
     public MatchResponse(String matchId, double score, List<String> matchedSkills, List<String> missingSkills,
-            Instant createdAt) {
+            List<String> suggestions, Instant createdAt) {
         this.matchId = matchId;
         this.score = score;
         this.matchedSkills = matchedSkills;
         this.missingSkills = missingSkills;
+        this.suggestions = suggestions;
         this.createdAt = createdAt;
     }
 
@@ -33,6 +35,10 @@ public class MatchResponse {
 
     public List<String> getMissingSkills() {
         return missingSkills;
+    }
+
+    public List<String> getSuggestions() {
+        return suggestions;
     }
 
     public Instant getCreatedAt() {

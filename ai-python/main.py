@@ -13,6 +13,7 @@ class AnalyzeResponse(BaseModel):
     score: float
     matchedSkills: List[str]
     missingSkills: List[str]
+    suggestions: List[str]
 
 @app.get("/health")
 def health():
@@ -20,9 +21,10 @@ def health():
 
 @app.post("/analyze", response_model=AnalyzeResponse)
 def analyze(req: AnalyzeRequest):
-    score, matched, missing = run_analysis(req.resumeText, req.jobText)
+    score, matched, missing, suggestions = run_analysis(req.resumeText, req.jobText)
     return {
         "score": score,
         "matchedSkills": matched,
-        "missingSkills": missing
+        "missingSkills": missing,
+        "suggestions": suggestions,
     }

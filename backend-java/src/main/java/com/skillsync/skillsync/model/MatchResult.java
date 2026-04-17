@@ -29,6 +29,9 @@ public class MatchResult {
     @Column(columnDefinition = "TEXT")
     private String missingSkills;
 
+    @Column(columnDefinition = "TEXT")
+    private String suggestions;
+
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
 
@@ -87,6 +90,14 @@ public class MatchResult {
 
     public void setMissingSkills(String missingSkills) {
         this.missingSkills = missingSkills;
+    }
+
+    public String getSuggestions() {
+        return suggestions;
+    }
+
+    public void setSuggestions(String suggestions) {
+        this.suggestions = suggestions;
     }
 
     public Instant getCreatedAt() {

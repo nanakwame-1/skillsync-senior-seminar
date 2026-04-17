@@ -6,6 +6,7 @@ public class AiAnalyzeResponse {
     private double score;
     private List<String> matchedSkills;
     private List<String> missingSkills;
+    private List<String> suggestions;
 
     public double getScore() {
         return score;
@@ -29,5 +30,13 @@ public class AiAnalyzeResponse {
 
     public void setMissingSkills(List<String> missingSkills) {
         this.missingSkills = missingSkills;
+    }
+
+    public List<String> getSuggestions() {
+        return suggestions;
+    }
+
+    public void setSuggestions(List<String> suggestions) {
+        this.suggestions = suggestions;
     }
 }

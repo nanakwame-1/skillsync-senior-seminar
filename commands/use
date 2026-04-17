@@ -1,0 +1,40 @@
+"API
+cd ai-python
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+
+
+cd ~/Documents/MyProjects/skillsync-senior-seminar/ai-python
+source .venv/bin/activate
+uvicorn main:app --reload
+
+test: curl http://127.0.0.1:8000/health
+
+Backend:
+
+cd ~/Documents/MyProjects/skillsync-senior-seminar/backend-java
+./mvnw spring-boot:run
+
+test: 
+curl http://localhost:8080/matches
+
+
+frontend:
+
+cd ~/Documents/MyProjects/skillsync-senior-seminar/frontend
+npm install
+npm run dev
+
+
+Test AI directly
+curl http://127.0.0.1:8000/health
+Test backend directly
+curl http://localhost:8080/matches
+Test full backend analysis
+
+
+curl -X POST http://localhost:8080/matches \
+-H "Content-Type: application/json" \
+-d '{"resumeText":"Java SQL Spring Boot","jobText":"Java developer with Spring Boot Docker"}'
