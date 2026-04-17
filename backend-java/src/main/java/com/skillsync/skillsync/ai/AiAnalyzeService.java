@@ -28,7 +28,7 @@ public class AiAnalyzeService {
                 .bodyValue(payload)
                 .retrieve()
                 .bodyToMono(AiAnalyzeResponse.class)
-                .timeout(Duration.ofSeconds(5))
+                .timeout(Duration.ofSeconds(20))
                 .onErrorResume(ex -> Mono.error(new RuntimeException("AI service unavailable: " + ex.getMessage())))
                 .block();
     }
